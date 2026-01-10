@@ -1,12 +1,13 @@
-import React from "react";
 import RepositoryList from "./components/RepositoryList";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import AppBar from "./components/AppBar";
+import { View } from "react-native";
 
 const Main = () => {
   return (
-    <SafeAreaProvider>
+    <View>
+      <AppBar />
       <RepositoryList />
-    </SafeAreaProvider>
+    </View>
   );
 };
 
