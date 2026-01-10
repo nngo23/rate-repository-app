@@ -1,6 +1,6 @@
-import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import theme from "../theme";
+import Text from "./Text";
 
 const styles = StyleSheet.create({
   card: {

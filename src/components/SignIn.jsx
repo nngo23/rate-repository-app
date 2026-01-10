@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
     borderRadius: theme.borderRadius,
     paddingVertical: theme.spacing.medium,
   },
-
   navButton: {
     marginTop: theme.spacing.medium,
     backgroundColor: theme.colors.primary,
