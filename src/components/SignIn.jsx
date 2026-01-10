@@ -7,11 +7,17 @@ import * as yup from "yup";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.background,
+    backgroundColor: "#e1e4e8",
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
+  formCard: {
+    backgroundColor: theme.colors.card,
+    paddingTop: 20,
+    paddingHorizontal: 16,
+    borderRadius: theme.borderRadius,
+    paddingVertical: theme.spacing.medium,
+  },
+
   navButton: {
     marginTop: theme.spacing.medium,
     backgroundColor: theme.colors.primary,
@@ -23,15 +29,16 @@ const styles = StyleSheet.create({
     color: theme.colors.card,
     fontSize: theme.fontSizes.subheading,
     fontWeight: theme.fontWeights.bold,
+    alignSelf: "center",
   },
   input: {
     width: "100%",
     padding: 12,
-    marginBottom: 16,
+    marginBottom: 8,
     fontSize: theme.fontSizes.body,
     borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: theme.borderRadius,
+    borderColor: "light grey",
+    borderRadius: 4,
   },
   inputError: {
     borderColor: "#d73a4a",
@@ -40,6 +47,8 @@ const styles = StyleSheet.create({
     color: "#d73a4a",
     fontSize: theme.fontSizes.body,
     marginBottom: 10,
+    marginLeft: 10,
+    alignSelf: "flex-start",
   },
 });
 
@@ -66,32 +75,34 @@ const SignIn = () => {
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="Username"
-        value={formik.values.username}
-        onChangeText={formik.handleChange("username")}
-      />
-      {formik.touched.username &&
-        formik.errors.username &&
-        styles.inputError && (
-          <Text style={styles.errorText}>{formik.errors.username}</Text>
-        )}
-      <TextInput
-        secureTextEntry={true}
-        style={styles.input}
-        placeholder="Password"
-        value={formik.values.password}
-        onChangeText={formik.handleChange("password")}
-      />
-      {formik.touched.password &&
-        formik.errors.password &&
-        styles.inputError && (
-          <Text style={{ color: "#d73a4a" }}>{formik.errors.password}</Text>
-        )}
-      <Link to="/" style={styles.navButton} onPress={formik.handleSubmit}>
-        <Text style={styles.navButtonText}>Sign in</Text>
-      </Link>
+      <View style={styles.formCard}>
+        <TextInput
+          style={styles.input}
+          placeholder="Username"
+          value={formik.values.username}
+          onChangeText={formik.handleChange("username")}
+        />
+        {formik.touched.username &&
+          formik.errors.username &&
+          styles.inputError && (
+            <Text style={styles.errorText}>{formik.errors.username}</Text>
+          )}
+        <TextInput
+          secureTextEntry={true}
+          style={styles.input}
+          placeholder="Password"
+          value={formik.values.password}
+          onChangeText={formik.handleChange("password")}
+        />
+        {formik.touched.password &&
+          formik.errors.password &&
+          styles.inputError && (
+            <Text style={styles.errorText}>{formik.errors.password}</Text>
+          )}
+        <Link to="/" style={styles.navButton} onPress={formik.handleSubmit}>
+          <Text style={styles.navButtonText}>Sign in</Text>
+        </Link>
+      </View>
     </View>
   );
 };
