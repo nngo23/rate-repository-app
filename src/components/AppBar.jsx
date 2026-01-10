@@ -1,29 +1,37 @@
-import { View, StyleSheet, Text, Pressable } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
+import { Link } from "react-router-native";
 import Constants from "expo-constants";
+import theme from "../theme";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#24292e",
+    backgroundColor: theme.colors.text,
     paddingTop: Constants.statusBarHeight,
     paddingHorizontal: 16,
+    flexDirection: "row",
   },
   tabText: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "700",
+    color: theme.colors.card,
+    fontSize: theme.fontSizes.heading,
+    fontWeight: theme.fontWeights.bold,
   },
   button: {
+    marginRight: 20,
     paddingVertical: 10,
   },
 });
 
 const AppBar = () => {
-  console.log("AppBar rendered");
   return (
     <View style={styles.container}>
-      <Pressable style={styles.button}>
-        <Text style={styles.tabText}>Repositories</Text>
-      </Pressable>
+      <ScrollView horizontal={true} showScrollIndicator={false}>
+        <Link to="/" style={styles.button}>
+          <Text style={styles.tabText}>Repositories</Text>
+        </Link>
+        <Link to="/signin" style={styles.button}>
+          <Text style={styles.tabText}>Sign in</Text>
+        </Link>
+      </ScrollView>
     </View>
   );
 };

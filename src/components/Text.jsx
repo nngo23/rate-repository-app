@@ -1,39 +1,38 @@
-import { Text as NativeText, StyleSheet } from "react-native";
-
+import { Text as RNText, StyleSheet } from "react-native";
 import theme from "../theme";
 
 const styles = StyleSheet.create({
-  text: {
+  default: {
     color: theme.colors.textPrimary,
     fontSize: theme.fontSizes.body,
     fontFamily: theme.fonts.main,
     fontWeight: theme.fontWeights.normal,
   },
-  colorTextSecondary: {
+  secondaryColor: {
     color: theme.colors.textSecondary,
   },
-  colorPrimary: {
+  primaryColor: {
     color: theme.colors.primary,
   },
-  fontSizeSubheading: {
+  subheadingSize: {
     fontSize: theme.fontSizes.subheading,
   },
-  fontWeightBold: {
+  boldWeight: {
     fontWeight: theme.fontWeights.bold,
   },
 });
 
 const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
-  const textStyle = [
-    styles.text,
-    color === "textSecondary" && styles.colorTextSecondary,
-    color === "primary" && styles.colorPrimary,
-    fontSize === "subheading" && styles.fontSizeSubheading,
-    fontWeight === "bold" && styles.fontWeightBold,
+  const combinedStyles = [
+    styles.default,
+    color === "textSecondary" && styles.secondaryColor,
+    color === "primary" && styles.primaryColor,
+    fontSize === "subheading" && styles.subheadingSize,
+    fontWeight === "bold" && styles.boldWeight,
     style,
   ];
 
-  return <NativeText style={textStyle} {...props} />;
+  return <RNText style={combinedStyles} {...props} />;
 };
 
 export default Text;
