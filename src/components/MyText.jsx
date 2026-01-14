@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
+const MyText = ({ color, fontSize, fontWeight, style, ...props }) => {
   const combinedStyles = [
     styles.default,
     color === "textSecondary" && styles.secondaryColor,
@@ -35,4 +35,4 @@ const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
   return <RNText style={combinedStyles} {...props} />;
 };
 
-export default Text;
+export default MyText;

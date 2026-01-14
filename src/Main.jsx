@@ -1,19 +1,18 @@
-import RepositoryList from "./components/RepositoryList";
-import SignIn from "./components/SignIn";
-import AppBar from "./components/AppBar";
 import { View, StyleSheet } from "react-native";
-import { Route, Routes, Navigate } from "react-router-native";
+import { Routes, Route, Navigate } from "react-router-native";
+import RepositoryList from "./components/RepositoryList";
+import AppBar from "./components/AppBar";
+import SignIn from "./components/SignIn";
 import theme from "./theme";
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: theme.colors.card,
-    flexGrow: 1,
-    flexShrink: 1,
   },
 });
 
-const Main = () => {
+export default function Main() {
   return (
     <View style={styles.container}>
       <AppBar />
@@ -24,6 +23,4 @@ const Main = () => {
       </Routes>
     </View>
   );
-};
-
-export default Main;
+}

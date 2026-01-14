@@ -1,6 +1,6 @@
 import { StyleSheet, View, Image } from "react-native";
 import theme from "../theme";
-import Text from "./Text";
+import MyText from "./MyText";
 
 const styles = StyleSheet.create({
   card: {
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   language: {
     alignSelf: "flex-start",
     backgroundColor: theme.colors.primary,
-    color: "#fff",
+    color: theme.colors.card,
     paddingHorizontal: 8,
     paddingVertical: 4,
     fontSize: theme.fontSizes.body,
@@ -62,12 +62,12 @@ const styles = StyleSheet.create({
 });
 
 const formatNumber = (num) =>
-  num >= 1000 ? `${(num / 1000).toFixed(1)}k` : num;
+  num >= 1000 ? `${(num / 1000).toFixed(1)}k` : String(num);
 
 const StatItem = ({ label, value }) => (
   <View style={styles.stat}>
-    <Text style={styles.statValue}>{formatNumber(value)}</Text>
-    <Text style={styles.statLabel}>{label}</Text>
+    <MyText style={styles.statValue}>{formatNumber(value)}</MyText>
+    <MyText style={styles.statLabel}>{label}</MyText>
   </View>
 );
 
@@ -76,9 +76,9 @@ const RepositoryItem = ({ item }) => (
     <View style={styles.row}>
       <Image style={styles.avatar} source={{ uri: item.ownerAvatarUrl }} />
       <View style={styles.info}>
-        <Text style={styles.name}>{item.fullName}</Text>
-        <Text style={styles.description}>{item.description}</Text>
-        <Text style={styles.language}>{item.language}</Text>
+        <MyText style={styles.name}>{item.fullName}</MyText>
+        <MyText style={styles.description}>{item.description}</MyText>
+        <MyText style={styles.language}>{item.language}</MyText>
       </View>
     </View>
     <View style={styles.statsRow}>
