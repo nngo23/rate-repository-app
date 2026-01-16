@@ -20,6 +20,23 @@ export const GET_REPOS = gql`
   }
 `;
 
+export const GET_SINGLE_REPO = gql`
+  query GetSingleRepo($id: ID!) {
+    repository(id: $id) {
+      id
+      fullName
+      description
+      language
+      forksCount
+      stargazersCount
+      ratingAverage
+      reviewCount
+      ownerAvatarUrl
+      url
+    }
+  }
+`;
+
 export const GET_USERS = gql`
   query {
     users {

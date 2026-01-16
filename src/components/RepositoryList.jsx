@@ -1,6 +1,7 @@
-import { FlatList, View, StyleSheet } from "react-native";
+import { FlatList, View, StyleSheet, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import useRepositories from "../hooks/useRepositories";
+import { useNavigate } from "react-router-native";
 import RepositoryItem from "./RepositoryItem";
 import MyText from "./MyText";
 
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
 const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
+  const navigate = useNavigate();
   const { data, loading, error } = useRepositories();
   if (loading) {
     return <MyText style={styles.loadingErrorText}>Loading …</MyText>;
@@ -37,7 +39,11 @@ const RepositoryList = () => {
       <FlatList
         data={data}
         ItemSeparatorComponent={ItemSeparator}
-        renderItem={({ item }) => <RepositoryItem item={item} />}
+        renderItem={({ item }) => (
+          <Pressable onPress={() => navigate(`/repository/${item.id}`)}>
+            <RepositoryItem item={item} />
+          </Pressable>
+        )}
         keyExtractor={(item) => item.id}
       />
     </SafeAreaView>
