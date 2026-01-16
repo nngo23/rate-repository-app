@@ -4,6 +4,7 @@ import RepositoryList from "./components/RepositoryList";
 import SingleRepoItem from "./components/SingleRepoItem";
 import AppBar from "./components/AppBar";
 import SignIn from "./components/SignIn";
+import CreateReview from "./components/CreateReview";
 import theme from "./theme";
 
 const styles = StyleSheet.create({
@@ -21,6 +22,7 @@ export default function Main() {
         <Route path="/repository/:id" element={<SingleRepoItem />} />
         <Route path="/" element={<RepositoryList />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/review" element={<CreateReview />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </View>

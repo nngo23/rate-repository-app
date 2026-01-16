@@ -6,7 +6,7 @@ const apolloUri = Constants.expoConfig.extra.apolloUri;
 const httpLink = createHttpLink({
   uri: apolloUri,
 });
-console.log("Apollo URI:", apolloUri);
+
 const createApolloClient = (authStorage) => {
   const authLink = setContext(async (_, { headers }) => {
     try {

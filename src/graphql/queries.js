@@ -27,12 +27,26 @@ export const GET_SINGLE_REPO = gql`
       fullName
       description
       language
-      forksCount
       stargazersCount
-      ratingAverage
+      forksCount
       reviewCount
+      ratingAverage
       ownerAvatarUrl
       url
+      reviews {
+        edges {
+          node {
+            id
+            text
+            rating
+            createdAt
+            user {
+              id
+              username
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -68,9 +82,17 @@ export const CREATE_USER = gql`
 `;
 
 export const AUTHENTICATE = gql`
-  mutation ASuthenticate($credentials: AuthenticateInput!) {
+  mutation Authenticate($credentials: AuthenticateInput!) {
     authenticate(credentials: $credentials) {
       accessToken
+    }
+  }
+`;
+
+export const CREATE_REVIEW = gql`
+  mutation CreateReview($review: CreateReviewInput!) {
+    createReview(review: $review) {
+      repositoryId
     }
   }
 `;

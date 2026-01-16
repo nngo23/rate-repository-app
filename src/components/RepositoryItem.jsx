@@ -1,18 +1,18 @@
-import { StyleSheet, View, Image, Pressable } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import theme from "../theme";
 import MyText from "./MyText";
 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: theme.colors.background,
-    padding: theme.spacing.large,
+    padding: theme.spacing.medium,
     borderRadius: theme.borderRadius,
     marginVertical: theme.spacing.small,
-    marginHorizontal: 16,
+    marginHorizontal: 1,
   },
   row: {
     flexDirection: "row",
-    marginBottom: 12,
+    marginBottom: 5,
   },
   info: {
     flex: 1,
