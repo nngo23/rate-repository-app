@@ -72,7 +72,7 @@ const StatItem = ({ label, value }) => (
 );
 
 const RepositoryItem = ({ item }) => (
-  <View style={styles.card}>
+  <View style={styles.card} testID="repositoryItem">
     <View style={styles.row}>
       <Image style={styles.avatar} source={{ uri: item.ownerAvatarUrl }} />
       <View style={styles.info}>
