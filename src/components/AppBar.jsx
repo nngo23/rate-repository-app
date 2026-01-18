@@ -53,14 +53,24 @@ const AppBar = () => {
               <Text style={styles.tabText}>Create a review</Text>
             </Pressable>
 
+            <Link to="/myreview" style={styles.button}>
+              <Text style={styles.tabText}>My reviews</Text>
+            </Link>
+
             <Pressable style={styles.button} onPress={handleSignOut}>
               <Text style={styles.tabText}>Sign out</Text>
             </Pressable>
           </>
         ) : (
-          <Link to="/signin" style={styles.button}>
-            <Text style={styles.tabText}>Sign in</Text>
-          </Link>
+          <>
+            <Link to="/signin" style={styles.button}>
+              <Text style={styles.tabText}>Sign in</Text>
+            </Link>
+
+            <Link to="/signup" style={styles.button}>
+              <Text style={styles.tabText}>Sign up</Text>
+            </Link>
+          </>
         )}
       </ScrollView>
     </View>
