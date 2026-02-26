@@ -8,11 +8,11 @@ Built using React Native with Expo, this project was developed as part of the mo
 
 Display a list of GitHub repositories with details such as:
 
-  Repository name and description
-  
-  Programming language
-  
-  Number of stars, forks, rating, and reviews
+      Repository name and description
+      
+      Programming language
+      
+      Number of stars, forks, rating, and reviews
 
 Sort and filter repositories
 
@@ -94,9 +94,9 @@ Ensure your device and development machine are on the same network.
 
 In the Expo CLI, press:
 
-  i — to open on iOS simulator
-  
-  a — to open on Android emulator
+        i — to open on iOS simulator
+        
+        a — to open on Android emulator
 
 Make sure you have the simulator or emulator set up first.
 
@@ -119,16 +119,16 @@ rate-repository-app/
 ## 📐 UI and Navigation
 
 The app uses React Router Native for different views, such as:
-
-  Repositories list
-  
-  Repository detail view
-  
-  User sign in / sign out
-  
-  User’s reviews
-  
-  Review form
+    
+      Repositories list
+      
+      Repository detail view
+      
+      User sign in / sign out
+      
+      User’s reviews
+      
+      Review form
 
 ## 📊 Data and State Management
 
@@ -144,21 +144,21 @@ Pagination and sorting are supported through query parameters.
 
 Formik and Yup are included to handle:
 
-  Sign in forms
-  
-  Review submission forms
-  
-  Validation of fields such as rating and text input
+      Sign in forms
+      
+      Review submission forms
+      
+      Validation of fields such as rating and text input
 
 ## 🤝 Contributing
 
 Feel free to improve the UI, add features like:
-
-  Dark mode
-  
-  Testing with React Native Testing Library
-  
-  Offline caching
+    
+      Dark mode
+      
+      Testing with React Native Testing Library
+      
+      Offline caching
 
 Pull requests and issues are welcome.
 
