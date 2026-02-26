@@ -119,10 +119,15 @@ rate-repository-app/
 ## 📐 UI and Navigation
 
 The app uses React Router Native for different views, such as:
+
   Repositories list
+  
   Repository detail view
+  
   User sign in / sign out
+  
   User’s reviews
+  
   Review form
 
 ## 📊 Data and State Management
@@ -140,7 +145,9 @@ Pagination and sorting are supported through query parameters.
 Formik and Yup are included to handle:
 
   Sign in forms
+  
   Review submission forms
+  
   Validation of fields such as rating and text input
 
 ## 🤝 Contributing
@@ -148,7 +155,9 @@ Formik and Yup are included to handle:
 Feel free to improve the UI, add features like:
 
   Dark mode
+  
   Testing with React Native Testing Library
+  
   Offline caching
 
 Pull requests and issues are welcome.
